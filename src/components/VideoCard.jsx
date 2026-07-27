@@ -2,7 +2,7 @@ import { FaPlay } from "react-icons/fa";
 
 function VideoCard() {
     return (
-        <div className="group relative aspect-[9/14] w-full justify-self-center overflow-hidden rounded-lg border border-gray-200 bg-white cursor-pointer sm:max-w-[240px]">
+        <div className="group relative aspect-[9/14] w-full cursor-pointer justify-self-center overflow-hidden rounded-lg border border-gray-200 bg-white sm:max-w-[240px]">
 
             {/* Thumbnail */}
             <img
@@ -16,18 +16,18 @@ function VideoCard() {
 
             {/* Play Button */}
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/50 backdrop-blur-sm transition group-hover:scale-110 sm:h-16 sm:w-16">
-                    <FaPlay className="ml-1 text-sm text-white sm:text-xl" />
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-black/50 backdrop-blur-sm transition group-hover:scale-110 sm:h-16 sm:w-16">
+                    <FaPlay className="ml-0.5 text-xs text-white sm:ml-1 sm:text-xl" />
                 </div>
             </div>
 
             {/* Content */}
-            <div className="absolute bottom-0 left-0 w-full p-2.5 sm:p-5">
-                <p className="mb-1.5 text-[10px] text-green-400 sm:mb-2 sm:text-sm">
+            <div className="absolute bottom-0 left-0 w-full p-2 sm:p-5">
+                <p className="mb-1 text-[9px] text-green-400 sm:mb-2 sm:text-sm">
                     Foreign • 1 day ago
                 </p>
 
-                <h3 className="line-clamp-3 text-xs font-semibold leading-4 text-white sm:text-lg sm:leading-8">
+                <h3 className="line-clamp-3 text-[11px] font-semibold leading-4 text-white sm:text-lg sm:leading-8">
                     US airstrikes on Iran amid ceasefire: Over 80 targets attacked...
                 </h3>
             </div>

@@ -241,21 +241,21 @@ function EpaperList() {
           Listen <span className="text-orange-400">●</span> You've been reading the free e-paper for 7 days now.
           Become a Premium Member to continue reading daily.
         </p>
-        <button className="mt-3 rounded-md bg-orange-500 px-4 py-2 text-lg font-bold text-white transition hover:bg-orange-600 max-[520px]:text-sm">
+        <button className="mt-3 max-w-full rounded-md bg-orange-500 px-4 py-2 text-lg font-bold leading-snug text-white transition hover:bg-orange-600 max-[520px]:text-sm">
           Get a premium membership today
         </button>
       </section>
 
       <main className="min-h-[calc(100vh-84px)] bg-[#121416] px-16 py-12 text-white max-[991px]:px-8 max-[520px]:px-3 max-[520px]:py-6">
         <h1 className="mb-6 text-3xl font-semibold max-[520px]:mb-4 max-[520px]:text-xl">My Favourite City</h1>
-        <div className="grid grid-cols-2 gap-7 max-[520px]:grid-cols-2 max-[520px]:gap-3 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-7 max-[520px]:gap-3 lg:grid-cols-3 2xl:grid-cols-4">
           {editions.map((edition) => (
             <EditionCard key={edition.id} edition={edition} />
           ))}
         </div>
 
         <h1 id="magazine-section" className="mb-6 mt-14 scroll-mt-24 text-3xl font-semibold max-[520px]:mb-4 max-[520px]:mt-8 max-[520px]:text-xl">Magazine</h1>
-        <div className="grid grid-cols-2 gap-7 max-[520px]:grid-cols-2 max-[520px]:gap-3 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-7 max-[520px]:gap-3 lg:grid-cols-3 2xl:grid-cols-4">
           {magazines.map((magazine) => (
             <MagazineCard key={magazine.id} magazine={magazine} />
           ))}

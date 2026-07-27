@@ -58,7 +58,7 @@ const featuredNews = [
 
 function ShareButtons() {
   return (
-    <div className="flex items-center gap-4 text-gray-400">
+    <div className="flex shrink-0 items-center gap-4 text-gray-400">
       <button className="hover:text-blue-500 transition"><FaFacebookF size={14} /></button>
       <button className="hover:text-white transition"><FaXTwitter size={14} /></button>
       <button className="hover:text-gray-200 transition"><FaLink size={14} /></button>
@@ -68,7 +68,7 @@ function ShareButtons() {
 
 function TopNews() {
   return (
-    <div className="text-white">
+    <div className="min-w-0 text-white">
 
       {/* Trending Bar */}
       <div className="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-2 mb-4">
@@ -136,8 +136,8 @@ function TopNews() {
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-between">
-            <button className="flex items-center gap-1 border border-gray-600 text-white text-xs px-3 py-1 rounded-full hover:border-gray-400 transition">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button className="flex min-w-0 items-center gap-1 rounded-full border border-gray-600 px-3 py-1 text-xs text-white transition hover:border-gray-400">
               {news.tag} <FaChevronRight size={8} />
             </button>
             <ShareButtons />
@@ -150,7 +150,7 @@ function TopNews() {
         <div key={news.id} className="mb-1 pb-4 border-b border-gray-700">
 
           {/* Text + Thumbnail row */}
-          <div className="flex gap-3 mb-3">
+          <div className="mb-3 flex gap-3 max-[360px]:flex-col">
             <div className="flex-1 min-w-0">
               <p className="text-sm font-bold leading-snug cursor-pointer">
                 <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded mr-1.5">
@@ -162,7 +162,7 @@ function TopNews() {
             </div>
 
             {/* Thumbnail */}
-            <div className="relative shrink-0 w-28 h-[76px] rounded overflow-hidden cursor-pointer group">
+            <div className="group relative h-[76px] w-28 shrink-0 cursor-pointer overflow-hidden rounded max-[360px]:h-36 max-[360px]:w-full">
               <img
                 src={news.image}
                 alt=""
@@ -180,8 +180,8 @@ function TopNews() {
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-between">
-            <button className="flex items-center gap-1 border border-gray-600 text-white text-xs px-3 py-1 rounded-full hover:border-gray-400 transition">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button className="flex min-w-0 items-center gap-1 rounded-full border border-gray-600 px-3 py-1 text-xs text-white transition hover:border-gray-400">
               {news.tag} <FaChevronRight size={8} />
             </button>
             <ShareButtons />

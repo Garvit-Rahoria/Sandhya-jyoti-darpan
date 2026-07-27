@@ -9,12 +9,12 @@ function Home() {
   return (
    <>
 
-   <div className="flex bg-[#181818]  min-h-screen">
+   <div className="flex min-h-screen w-full bg-[#181818]">
       {/* Left Sidebar */}
       <LeftSidebar />
 
       {/* Main Content */}
-      <div className="flex-1 p-6 text-white max-[768px]:p-4">
+      <div className="min-w-0 flex-1 p-6 text-white max-[768px]:p-4 max-[420px]:p-3">
         <Outlet />
         <Footer className="mt-6 hidden bg-[#1b1b1b] text-white max-[768px]:block" />
       </div>

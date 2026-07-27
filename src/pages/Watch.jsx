@@ -6,7 +6,7 @@ function Watch() {
   const navigate = useNavigate();
 
   return (
-    <section className="min-h-[calc(100vh-65px)] bg-[#242424] px-3 py-6 sm:px-6 sm:py-8 lg:px-8">
+    <section className="min-h-[calc(100vh-65px)] bg-[#242424] px-3 py-6 max-[360px]:px-4 sm:px-6 sm:py-8 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <button
           type="button"
@@ -32,7 +32,7 @@ function Watch() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-2 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
           {Array.from({ length: 10 }).map((_, index) => (
             <WatchCard key={index} />
           ))}

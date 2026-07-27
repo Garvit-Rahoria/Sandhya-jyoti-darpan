@@ -47,12 +47,12 @@ const Header = () => {
     }`;
 
   const mobileIconClass = ({ isActive }) =>
-    `flex h-[65px] w-10 items-center justify-center transition max-[420px]:w-8 ${
+    `flex h-[65px] w-9 shrink-0 items-center justify-center transition max-[420px]:w-8 max-[360px]:w-7 ${
       isActive ? "text-orange-500" : "text-gray-100 hover:text-orange-500"
     }`;
 
   const epaperMobileButtonClass =
-    "flex h-[65px] w-10 items-center justify-center text-gray-100 transition hover:text-orange-500 max-[420px]:w-8";
+    "flex h-[65px] w-9 shrink-0 items-center justify-center text-gray-100 transition hover:text-orange-500 max-[420px]:w-8 max-[360px]:w-7";
 
   const profileButton = (
     <div className="relative">
@@ -75,50 +75,50 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky left-0 top-0 z-50 w-full overflow-visible border-b border-gray-700 bg-black text-white">
-        <div className="mx-auto flex h-[65px] max-w-[1700px] items-center justify-between px-7 max-[991px]:gap-4 max-[991px]:px-4 max-[420px]:gap-2 max-[420px]:px-3">
+      <header className="sticky left-0 top-0 z-[100] w-full border-b border-gray-700 bg-black text-white">
+        <div className="mx-auto flex h-[65px] w-full max-w-[1700px] min-w-0 items-center justify-between px-7 max-[991px]:gap-3 max-[991px]:px-4 max-[420px]:gap-2 max-[420px]:px-3 max-[360px]:px-2">
           <button
             type="button"
             onClick={() => navigate("/")}
-            className="flex items-center"
+            className="flex shrink-0 items-center"
             aria-label="Go to home"
           >
             <img
               src={isEpaperPage ? epaperLogo : logoo}
               alt="Logo"
-              className="w-30 object-contain max-[420px]:w-26"
+              className="w-[112px] object-contain max-[420px]:w-[88px] max-[360px]:w-[72px]"
             />
           </button>
 
           {!isWatchPage && !isEpaperPage && (
-            <nav className="ml-auto hidden items-center gap-2 max-[991px]:flex max-[420px]:gap-4">
+            <nav className="ml-auto hidden min-w-0 flex-1 items-center justify-end gap-1.5 overflow-x-auto max-[991px]:flex max-[420px]:gap-1 max-[340px]:gap-0.5 hide-scrollbar">
               <NavLink to="/web-stories" target="_blank" rel="noreferrer" className={mobileIconClass} aria-label="Web Stories">
-                <IoBookOutline className="text-[30px] max-[420px]:text-[26px]" />
+                <IoBookOutline className="text-[28px] max-[420px]:text-[25px] max-[360px]:text-[22px]" />
               </NavLink>
 
               <NavLink to="/e-paper" className={mobileIconClass} aria-label="E-paper">
-                <FaRegNewspaper className="text-[28px] max-[420px]:text-[24px]" />
+                <FaRegNewspaper className="text-[26px] max-[420px]:text-[23px] max-[360px]:text-[21px]" />
               </NavLink>
 
               <NavLink to="/watch" className={mobileIconClass} aria-label="Watch">
-                <FaYoutube className="text-[30px] max-[420px]:text-[26px]" />
+                <FaYoutube className="text-[28px] max-[420px]:text-[25px] max-[360px]:text-[22px]" />
               </NavLink>
 
               <NavLink to="/search" className={mobileIconClass} aria-label="Search">
-                <IoSearchOutline className="text-[32px] max-[420px]:text-[27px]" />
+                <IoSearchOutline className="text-[30px] max-[420px]:text-[26px] max-[360px]:text-[23px]" />
               </NavLink>
             </nav>
           )}
 
           {!isWatchPage && isEpaperPage && (
-            <nav className="relative ml-auto hidden items-center gap-2 max-[768px]:flex max-[420px]:gap-2">
+            <nav className="relative ml-auto hidden min-w-0 flex-1 items-center justify-end gap-1.5 overflow-visible max-[768px]:flex max-[420px]:gap-1 max-[340px]:gap-0.5">
               <button
                 type="button"
                 onClick={() => setShowDatePicker((value) => !value)}
                 className={epaperMobileButtonClass}
                 aria-label="Change the date"
               >
-                <FaRegCalendarAlt className="text-[27px] max-[420px]:text-[24px]" />
+                <FaRegCalendarAlt className="text-[25px] max-[420px]:text-[23px] max-[360px]:text-[21px]" />
               </button>
 
               <button
@@ -127,7 +127,7 @@ const Header = () => {
                 className={epaperMobileButtonClass}
                 aria-label="Magazine"
               >
-                <IoBookOutline className="text-[30px] max-[420px]:text-[26px]" />
+                <IoBookOutline className="text-[28px] max-[420px]:text-[25px] max-[360px]:text-[22px]" />
               </button>
 
               <button
@@ -136,7 +136,7 @@ const Header = () => {
                 className={epaperMobileButtonClass}
                 aria-label="Change city"
               >
-                <IoLocationOutline className="text-[31px] max-[420px]:text-[27px]" />
+                <IoLocationOutline className="text-[29px] max-[420px]:text-[26px] max-[360px]:text-[23px]" />
               </button>
 
               <div className="relative">
@@ -146,13 +146,13 @@ const Header = () => {
                   className={epaperMobileButtonClass}
                   aria-label="Open profile menu"
                 >
-                  <FaUserCircle className="text-[31px] max-[420px]:text-[27px]" />
+                  <FaUserCircle className="text-[29px] max-[420px]:text-[26px] max-[360px]:text-[23px]" />
                 </button>
                 {showProfileMenu && <Profile />}
               </div>
 
               {showDatePicker && (
-                <div className="absolute right-0 top-[65px] w-64 rounded-md border border-gray-700 bg-[#171717] p-4 shadow-2xl">
+                <div className="fixed right-3 top-[65px] z-[120] w-64 max-w-[calc(100vw-24px)] rounded-md border border-gray-700 bg-[#171717] p-4 shadow-2xl">
                   <p className="mb-3 text-sm font-semibold text-gray-300">Select e-paper date</p>
                   <input
                     type="date"
@@ -178,7 +178,7 @@ const Header = () => {
                   </button>
 
                   {showDatePicker && (
-                    <div className="absolute right-0 top-[65px] w-64 rounded-md border border-gray-700 bg-[#171717] p-4 shadow-2xl">
+                    <div className="absolute right-0 top-[65px] z-[120] w-64 rounded-md border border-gray-700 bg-[#171717] p-4 shadow-2xl">
                       <p className="mb-3 text-sm font-semibold text-gray-300">Select e-paper date</p>
                       <input
                         type="date"

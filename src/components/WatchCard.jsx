@@ -2,7 +2,7 @@ import { FaPlay } from "react-icons/fa";
 
 const WatchCard = () => {
   return (
-    <article className="group relative aspect-[9/14] w-full justify-self-center overflow-hidden rounded-xl border border-white/10 bg-neutral-900 shadow-sm sm:max-w-[240px]">
+    <article className="group relative aspect-[9/14] w-full max-w-[280px] justify-self-center overflow-hidden rounded-xl border border-white/10 bg-neutral-900 shadow-sm min-[380px]:max-w-[240px]">
       {/* Thumbnail */}
       <img
         src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700"

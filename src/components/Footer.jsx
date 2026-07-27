@@ -92,7 +92,7 @@ function Footer({ className = "", showAppPromo = true }) {
             Popular Categories
           </h3>
 
-          <div className="grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 text-xs min-[380px]:grid-cols-2 sm:grid-cols-3">
             <a href="#" className="rounded-md bg-[#242424] px-3 py-2 font-medium transition hover:bg-[#2d2d2d] hover:text-white">Politics</a>
             <a href="#" className="rounded-md bg-[#242424] px-3 py-2 font-medium transition hover:bg-[#2d2d2d] hover:text-white">Business</a>
             <a href="#" className="rounded-md bg-[#242424] px-3 py-2 font-medium transition hover:bg-[#2d2d2d] hover:text-white">Sports</a>
